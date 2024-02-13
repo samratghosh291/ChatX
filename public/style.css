@@ -1,0 +1,73 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Apply basic CSS styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(39, 176, 255);
+  background: linear-gradient(90deg, rgba(39, 176, 255, 1) 0%, rgba(93, 50, 218, 1) 100%);
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.chatwindow {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Add scrollbar on the y-axis */
+    max-height: 400px; /* Set max height to enable scrolling */
+    scroll-margin-right: 2px solid black; /* Hide scrollbar */
+  }
+  
+
+.chatform {
+  margin-top: 20px;
+}
+
+#msg {
+  padding: 12px;
+  border-radius: 6px;
+  border: 2px solid #b2b2b2;
+  margin-right: 10px;
+}
+
+#sendBtn {
+  padding: 12px 24px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#sendBtn:hover {
+  background-color: #45a049;
+}
+
+
+/* Sender message style */
+/* .sender-message {
+    color: green;
+  } */
+  
+  /* Own message style */
+  /* .own-message {
+    color: blue;
+  } */
+  
