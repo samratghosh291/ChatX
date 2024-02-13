@@ -5,34 +5,34 @@ This is a real-time chat application built with Socket.IO and Express. Users can
 
 ## Features
 
-- Real-time messaging: Messages are delivered instantly to all connected clients.
-- Simple interface: Easy-to-use interface for sending and receiving messages.
-- Scalable: The application is built on Socket.IO, allowing for easy scalability to handle large numbers of concurrent users.
-- Responsive design: The chat window adapts to different screen sizes for a seamless user experience.
+- **Real-time messaging**: Messages are delivered instantly to all connected clients.
+- **Simple interface**: Easy-to-use interface for sending and receiving messages.
+- **Scalable**: The application is built on Socket.IO, allowing for easy scalability to handle large numbers of concurrent users.
+- **Responsive design**: The chat window adapts to different screen sizes for a seamless user experience.
 
 ## Installation
 
-1. Clone the repository:
-   ```
+1. **Clone the repository:**
+   ```sh
    git clone <repository-url>
    ```
 
-2. Navigate to the project directory:
-   ```
+2. **Navigate to the project directory:**
+   ```sh
    cd real-time-chat-app
    ```
 
-3. Install dependencies:
-   ```
+3. **Install dependencies:**
+   ```sh
    npm install
    ```
 
-4. Start the server:
-   ```
+4. **Start the server:**
+   ```sh
    npm start
    ```
 
-5. Open your web browser and go to `http://localhost:9000` to access the chat application.
+5. **Open your web browser and go to `http://localhost:9000` to access the chat application.**
 
 ## Usage
 
