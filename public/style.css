@@ -6,15 +6,24 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgb(39, 176, 255);
-  background: linear-gradient(90deg, rgba(39, 176, 255, 1) 0%, rgba(93, 50, 218, 1) 100%);
+  position: relative; /* Ensure relative positioning for absolute elements */
+}
+
+.back-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Ensure the video covers the entire screen */
+  z-index: -1;
 }
 
 .container {
+  position: relative; /* Ensure relative positioning for absolute elements */
+  z-index: 1; /* Ensure the container is above the video */
   text-align: center;
+  padding: 20px; /* Add padding to center the content */
 }
 
 h1 {
@@ -23,17 +32,16 @@ h1 {
 }
 
 .chatwindow {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    padding: 30px;
-    max-width: 500px;
-    margin: 0 auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    overflow-y: auto; /* Add scrollbar on the y-axis */
-    max-height: 400px; /* Set max height to enable scrolling */
-    scroll-margin-right: 2px solid black; /* Hide scrollbar */
-  }
-  
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Add scrollbar on the y-axis */
+  max-height: 400px; /* Set max height to enable scrolling */
+  scroll-margin-right: 2px solid black; /* Hide scrollbar */
+}
 
 .chatform {
   margin-top: 20px;
@@ -46,28 +54,166 @@ h1 {
   margin-right: 10px;
 }
 
-#sendBtn {
-  padding: 12px 24px;
-  background-color: #4caf50;
+/* Loader Styles */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Ensure loader is above other elements */
+}
+
+.loader--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader::after {
+  content: '';
+  width: 80px;
+  height: 80px;
+  border: 15px solid #f3f3f3;
+  border-top: 15px solid #3498db;
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button Styles */
+.button-77 {
+  align-items: center;
+  appearance: none;
+  background-clip: padding-box;
+  background-color: initial;
+  background-image: none;
+  border-style: none;
+  box-sizing: border-box;
   color: #fff;
-  border: none;
-  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+  display: inline-block;
+  flex-direction: row;
+  flex-shrink: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  justify-content: center;
+  line-height: 24px;
+  margin: 0;
+  min-height: 64px;
+  outline: none;
+  overflow: visible;
+  padding: 19px 26px;
+  pointer-events: auto;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: auto;
+  word-break: keep-all;
+  z-index: 0;
 }
 
-#sendBtn:hover {
-  background-color: #45a049;
+@media (min-width: 768px) {
+  .button-77 {
+    padding: 19px 32px;
+  }
 }
 
+.button-77:before,
+.button-77:after {
+  border-radius: 80px;
+}
 
-/* Sender message style */
-/* .sender-message {
-    color: green;
-  } */
-  
-  /* Own message style */
-  /* .own-message {
-    color: blue;
-  } */
-  
+.button-77:before {
+  background-color: rgba(249, 58, 19, .32);
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -2;
+}
+
+.button-77:after {
+  background-color: initial;
+  background-image: linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  bottom: 4px;
+  content: "";
+  display: block;
+  left: 4px;
+  overflow: hidden;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  transition: all 100ms ease-out;
+  z-index: -1;
+}
+
+.button-77:hover:not(:disabled):after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition-timing-function: ease-in;
+}
+
+.button-77:active:not(:disabled) {
+  color: #ccc;
+}
+
+.button-77:active:not(:disabled):after {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), linear-gradient(92.83deg, #ff7426 0, #f93a13 100%);
+  bottom: 4px;
+  left: 4px;
+  right: 4px;
+  top: 4px;
+}
+
+.button-77:disabled {
+  cursor: default;
+  opacity: .24;
+}
+
+/* Additional styles as needed */
+
+/* Define CSS classes for different message types */
+
+/* Message from the current user (left side, green) */
+.message--me {
+  background-color: #d4edda; /* Green background color */
+  color: #155724; /* Dark green text color */
+  text-align: left;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+/* Message from other users (right side, blue) */
+.message--sender {
+  background-color: #cce5ff; /* Blue background color */
+  color: #004085; /* Dark blue text color */
+  text-align: right;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px 0;
+}
