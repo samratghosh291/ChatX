@@ -7,22 +7,18 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <!-- <div class="loader"></div> -->
   <video autoplay loop muted playsinline class="back-video">
     <source src="./bg_video.mp4" type="video/mp4">
   </video>
   <div class="container">
-    <h1>Chatting</h1>
-    <div id="chat-window" class="chatwindow"></div>
-    <form class="chatform" id="chat-form">
-      <input type="text" id="msg" placeholder="Enter Message Here:">
+    <h1>Chat Room</h1>
+    <div id="chat-window" class="chat-window"></div>
+    <form class="chat-form" id="chat-form">
+      <input type="text" id="msg" placeholder="Type your message...">
       <input type="file" id="imageInput" accept="image/*">
-      <button class="button-77" id="sendBtn" type="submit">Send</button>
+      <button class="send-btn" id="sendBtn" type="submit">Send</button>
     </form>
   </div>
-
-
-
   <script src="/socket.io/socket.io.js"></script>
   <script src="./script.js"></script>
 </body>
